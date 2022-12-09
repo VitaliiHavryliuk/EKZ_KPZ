@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ITask } from 'src/interfaces/task.interface';
-import { TaskListService } from 'src/app/task-list.service';
+import { TaskListService } from 'src/app/task-list/task-list.service';
 import { Time } from '@angular/common';
 
 @Component({
@@ -29,13 +29,14 @@ export class TaskListComponent implements OnInit {
     });
   }
 
-  updateTask(id : number, status: string, time: Time, text: string)
+  updateTask(id : number, status: string, time: string, text: string, priority:string)
   {
     let task = {
       id : id,
       time : time,
       status : status,
-      text : text
+      text : text,
+      priority : priority
     }
     this.taskService.updateTask(task)
     .subscribe(data => {
@@ -44,9 +45,9 @@ export class TaskListComponent implements OnInit {
     })
   }
 
-  addTask(status: string,time:Time, text: string)
+  addTask(status: string,time:string, text: string, priority:string)
   {
-    this.taskService.createTask({id:null,status:status, text:text, time:time})
+    this.taskService.createTask({id:null,status:status, text:text, time:time, priority:priority})
     .subscribe(data => {
       this.tasks = data
       this._snackBar.open('Task has been added!');

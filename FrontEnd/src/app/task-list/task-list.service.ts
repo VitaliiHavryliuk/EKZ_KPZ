@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, switchMap } from 'rxjs';
-import { ITask } from '../interfaces/task.interface';
+import { ITask } from '../../interfaces/task.interface';
 
 @Injectable({
   providedIn: 'root'

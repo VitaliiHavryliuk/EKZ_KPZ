@@ -3,6 +3,7 @@ import { Time } from "@angular/common";
 export interface ITask {
     id: number | null;
     status: string;
-    time: Time;
+    time: string;
     text: string;
+    priority: string;
 }

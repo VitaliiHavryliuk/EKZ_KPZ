@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TaskListComponent } from './task-list/task-list.component';
-import { TaskModule } from './task.module';
+import { TaskModule } from './task-list/task.module';
 
 @NgModule({
   declarations: [
